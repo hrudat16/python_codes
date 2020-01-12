@@ -51,7 +51,11 @@ if D1 < 9:
 else:
     latest_file = glob.glob("E:/Bhavcopies/cm"+D+M+Y+"bhav.csv.zip")
 
-cf =  pd.read_csv ("cm10JAN2020bhav.csv", usecols = ['SYMBOL','HIGH','LOW','CLOSE'])
+if D1 < 9:
+    cf =  pd.read_csv ("cm0"+D+M+Y+"bhav.csv", usecols = ['SYMBOL','HIGH','LOW','CLOSE'])
+
+else:
+    cf =  pd.read_csv ("cm"+D+M+Y+"bhav.csv", usecols = ['SYMBOL','HIGH','LOW','CLOSE'])
 
 df =  pd.DataFrame(cf)
 
